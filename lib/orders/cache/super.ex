@@ -1,14 +1,17 @@
-defmodule EoS.Orders.Cache.Supervisor do
-  @moduledoc false
+defmodule EOS.Orders.Cache.Supervisor do
+  @moduledoc """
+  Cache supervisor
+  """
   
   use Supervisor
 
-  def start_link(arg) do
-    Supervisor.start_link(__MODULE__, arg)
+  def start_link(opts) do
+    Supervisor.start_link(__MODULE__, :ok, opts)
   end
 
-  def init(_arg) do
+  def init(_opts) do
     children = [
+      worker(EOS.Orders.Cache.Simple, [[]])
     ]
 
     supervise(children, strategy: :one_for_one)

@@ -3,16 +3,10 @@ defmodule EOS do
   Documentation for EOS.
   """
 
-  @doc """
-  Hello world.
+  use Application
 
-  ## Examples
-
-      iex> EOS.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def start(_type, _args) do
+    EOS.Orders.Cache.Supervisor.start_link(name: EOS.Orders.Cache.Supervisor)
   end
+
 end

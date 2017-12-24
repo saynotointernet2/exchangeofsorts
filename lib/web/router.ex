@@ -1,4 +1,4 @@
-defmodule EoS.Web.Router do
+defmodule EOS.Web.Router do
   use Plug.Router
 
   #For CORS headers and stuff, not sure how to configure yet
