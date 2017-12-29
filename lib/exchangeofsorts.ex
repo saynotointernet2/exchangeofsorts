@@ -7,6 +7,7 @@ defmodule EOS do
 
   def start(_type, _args) do
     EOS.Orders.Cache.Supervisor.start_link(name: EOS.Orders.Cache.Supervisor)
+    EOS.Web.Router.start_link
   end
 
 end

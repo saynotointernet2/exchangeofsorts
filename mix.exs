@@ -15,6 +15,7 @@ defmodule EOS.Mixfile do
   def application do
     [
       extra_applications: [:logger],
+      applications: [:plug, :cowboy],
       mod: {EOS, []}
     ]
   end

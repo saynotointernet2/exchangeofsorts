@@ -14,12 +14,16 @@ defmodule EOS.Web.Router do
     send_resp(conn, 200, "WIP")
   end
 
-  post "api/v0/user/order_book" do
+  post "api/v0/order_book" do
     send_resp(conn, 200, "WIP")
   end
 
   match(_) do
     send_resp(conn, 404, "NOT WIP")
+  end
+
+  def start_link do
+    Plug.Adapters.Cowboy2.http(EOS.Web.Router, [])
   end
 
 end
