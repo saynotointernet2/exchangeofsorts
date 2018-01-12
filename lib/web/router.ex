@@ -6,11 +6,11 @@ defmodule EOS.Web.Router do
   plug :match
   plug :dispatch
 
-  post "api/v0/place_market_order" do
+  post "api/v0/market_order" do
     send_resp(conn, 200, "WIP")
   end
 
-  post "api/v0/place_limit_order" do
+  post "api/v0/limit_order" do
     send_resp(conn, 200, "WIP")
   end
 

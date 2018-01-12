@@ -9,8 +9,8 @@ defmodule EOS.Orders.LimitOrder do
   alias EOS.Orders.LimitOrder, as: LimitOrder
 
   @type limit_type :: :limit_buy | :limit_sell
+
   @type limit_order :: %LimitOrder{
-    order_type: limit_type,
     price: number,
     amount: number,
     account_id: String.t,
